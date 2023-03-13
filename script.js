@@ -1,20 +1,12 @@
 'use strict';
 
-//const diceBtn = document.querySelector("btn btn--roll");
-//
-//use # to select id, use . to select classes
-// getElementById to use it without # (better performance)
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 
 const score0El = document.querySelector('#score--0');
-const score1El = document.getElementById('score--1'); // get element id to get to use it without # (better performance)
+const score1El = document.getElementById('score--1');
 const diceEl = document.querySelector('.dice');
 
-// const scores = [0, 0];
-// let currentScore = 0;
-// let activePlayer = 0;
-// let playing = true;
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
@@ -24,7 +16,7 @@ const curr1 = document.getElementById('current--1');
 
 let scores, currentScore, activePlayer, playing;
 
-//starting conditions function
+///starting conditions function
 const init = function () {
   scores = [0, 0];
   currentScore = 0;
@@ -74,11 +66,7 @@ btnRoll.addEventListener('click', function () {
       currentScore += dice;
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
-
-      // curr0.textContent = currentScore; //change later
     } else {
-      //switch player
-      //curr0 = 0;
       switchPlayer();
     }
   }
@@ -114,7 +102,5 @@ btnHold.addEventListener('click', function () {
   }
 });
 btnNew.addEventListener('click', function () {
-  //playing = true;
-  // diceEl.classList.add('hidden');
   init();
 });
